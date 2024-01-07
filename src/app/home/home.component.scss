@@ -1,0 +1,25 @@
+.text-container {
+  position: relative;
+  z-index: 2;
+}
+
+.text-container h1 {
+  color: #333;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-custom {
+  padding: .75rem 1.25rem;
+  border-radius: 30px;
+  transition: transform .3s ease-in-out;
+}
+
+.btn-custom:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.image-style {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  border-radius: 5px;
+}
