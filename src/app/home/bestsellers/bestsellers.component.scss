@@ -1,0 +1,15 @@
+.homepage-button-product {
+  transition: transform 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+.bestsellers{
+  margin-top: 140px !important;
+}
+
+.cards{
+  margin-top: 60px;
+}

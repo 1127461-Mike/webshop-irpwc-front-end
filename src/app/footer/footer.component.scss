@@ -21,10 +21,10 @@
 
     input[type="email"] {
       background-color: transparent;
-      border: none;
+      border: 1px solid;
       border-bottom: 2px solid #fff;
       color: #fff;
-      margin-right: 1rem;
+      //margin-right: 1rem;
       padding: 0.5rem;
       width: 500px;
 
@@ -42,9 +42,11 @@
       background-color: #fff;
       border: none;
       padding: 0.5rem 1rem;
+      padding-top: 9px;
+      padding-bottom: 10px;
       cursor: pointer;
       transition: background-color 0.3s ease;
-
+      margin-left: -1px;
       &:hover {
         background-color: #e7e7e7;
       }
