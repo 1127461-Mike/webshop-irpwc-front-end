@@ -1,0 +1,8 @@
+<footer class="footer">
+  <h2>Sta je al op de lijst?</h2>
+  <p>Aanbiedingen en kortingen: meld je aan</p>
+  <form (submit)="subscribeUser(emailInput.value)">
+    <input type="email" #emailInput placeholder="E-mailadres invoeren *" required email>
+    <button type="submit">Aanmelden</button>
+  </form>
+</footer>

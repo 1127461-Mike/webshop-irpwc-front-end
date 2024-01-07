@@ -1,0 +1,53 @@
+
+.footer {
+  margin-top: 100px;
+  background-color: #212529;
+  color: #fff;
+  padding: 3rem 0;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  form {
+    display: inline-block;
+
+    input[type="email"] {
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px solid #fff;
+      color: #fff;
+      margin-right: 1rem;
+      padding: 0.5rem;
+      width: 500px;
+
+      &::placeholder {
+        color: #fff;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: #ccc;
+      }
+    }
+
+    button {
+      background-color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #e7e7e7;
+      }
+    }
+  }
+}

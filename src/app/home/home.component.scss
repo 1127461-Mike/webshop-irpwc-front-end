@@ -23,3 +23,14 @@
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
   border-radius: 5px;
 }
+
+
+.homepage-button-product {
+  transition: transform 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+

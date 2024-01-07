@@ -1,0 +1,18 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Bestsellers</h2>
+  <div class="row">
+    <!-- Product Cards -->
+    <div class="col-6 col-md-4 col-lg-3 mb-4" *ngFor="let product of products | slice:0:4">
+      <div class="card border-0">
+        <img [src]="product.imagePath" class="card-img-top homepage-button-product" [alt]="product.name">
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">{{ product.price | currency:'EUR' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center">
+    <button class="btn btn-outline-dark mt-3">Shop bestsellers</button>
+  </div>
+</div>
