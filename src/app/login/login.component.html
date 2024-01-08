@@ -1,0 +1,26 @@
+<app-navigation></app-navigation>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4">
+      <div class="text-center mb-4">
+        <h3>Inloggen</h3>
+      </div>
+
+      <form (ngSubmit)="onLogin()">
+        <div class="mb-3">
+          <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" placeholder="E-mailadres" required>
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" placeholder="Wachtwoord" required>
+        </div>
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-primary">Inloggen</button>
+        </div>
+        <p class="text-center mt-3">
+          <a href="#">Maak een account</a>
+        </p>
+
+      </form>
+    </div>
+  </div>
+</div>
