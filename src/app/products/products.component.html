@@ -1,0 +1,40 @@
+<app-navigation></app-navigation>
+
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-3">
+      <h4>Filteren op</h4>
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-12">
+          <div class="d-flex justify-content-between align-items-center">
+            <h2>Alle producten</h2>
+            <div>
+              <label for="sortOptions" class="form-label">Indelen op</label>
+              <select id="sortOptions" class="form-select" (change)="sortProducts($event)">
+                <option value="priceAsc">Prijs: Laag naar Hoog</option>
+                <option value="priceDesc">Prijs: Hoog naar Laag</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="row">
+            <div class="col-6 col-md-4 col-lg-3 mb-4" *ngFor="let product of products">
+              <div class="card border-0 product">
+                <img [src]="product.imagePath" class="card-img-top" [alt]="product.name">
+                <div class="card-body text-center">
+                  <h5 class="card-title">{{ product.name }}</h5>
+                  <p class="card-text">{{ product.price | currency:'EUR' }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

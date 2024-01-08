@@ -1,0 +1,25 @@
+.product {
+  margin-top: 15px;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .card-body {
+      margin-top: auto;
+    }
+  }
+}

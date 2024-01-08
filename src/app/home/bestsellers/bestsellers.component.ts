@@ -9,15 +9,15 @@ import {ProductService} from "../../Services/product.service";
   styleUrl: './bestsellers.component.scss'
 })
 export class BestsellersComponent implements OnInit{
-  // products: Product[] = [
-  //   new Product('uuid-1', 'Zwart power oogpotlood', '...', 'assets/img/maxbookair.jpg', 15.00, 'Noelle'),
-  //   new Product('uuid-1', 'Zwart power oogpotlood', '...', 'assets/img/maxbookair.jpg', 15.00, 'Noelle'),
-  //   new Product('uuid-1', 'Zwart power oogpotlood', '...', 'assets/img/maxbookair.jpg', 15.00, 'Noelle'),
-  //   new Product('uuid-1', 'Zwart power oogpotlood', '...', 'assets/img/maxbookair.jpg', 15.00, 'Noelle'),
-  //   new Product('uuid-1', 'Zwart power oogpotlood', '...', 'assets/img/maxbookair.jpg', 15.00, 'Noelle'),
-  //   new Product('uuid-1', 'Zwart power oogpotlood', '...', 'assets/img/maxbookair.jpg', 15.00, 'Noelle'),
-  // ];
-  products: Product[] = [];
+  products: Product[] = [
+    new Product('uuid-1', 'Zwart power oogpotlood', '...', 'assets/img/200w.gif', 15.00, 'Noelle'),
+    new Product('uuid-1', 'Zwart power oogpotlood', '...', 'assets/img/200w.gif', 15.00, 'Noelle'),
+    new Product('uuid-1', 'Zwart power oogpotlood', '...', 'assets/img/200w.gif', 15.00, 'Noelle'),
+    new Product('uuid-1', 'Zwart power oogpotlood', '...', 'assets/img/200w.gif', 15.00, 'Noelle'),
+    new Product('uuid-1', 'Zwart power oogpotlood', '...', 'assets/img/200w.gif', 15.00, 'Noelle'),
+    new Product('uuid-1', 'Zwart power oogpotlood', '...', 'assets/img/200w.gif', 15.00, 'Noelle'),
+  ];
+  // products: Product[] = [];
   private baseUrl = 'http://localhost:8080';
 
   constructor(private productService: ProductService) {
