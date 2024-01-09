@@ -1,1 +1,48 @@
-<p>registration works!</p>
+<app-navigation></app-navigation>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4">
+      <div class="text-center mb-4">
+        <h3>Registreren</h3>
+      </div>
+
+      <form (ngSubmit)="onRegister()">
+        <p class="invalid" style="color: red" *ngIf="somethingWentWrong"> Er ging iets fout.. probeer het eens opnieuw.</p>
+        <div class="mb-3">
+          <input type="email" class="form-control" id="email" [(ngModel)]="user.email" name="email"
+                 placeholder="E-mailadres" required >
+
+        </div>
+
+        <div class="mb-3">
+          <input type="text" class="form-control" id="name" [(ngModel)]="user.name" name="name" placeholder="Naam"
+                 required>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="surname" [(ngModel)]="user.surname" name="surname"
+                 placeholder="Achternaam" required>
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password"
+                 placeholder="Wachtwoord" required>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="postalCode" [(ngModel)]="user.postalCode" name="postalCode"
+                 placeholder="Postcode" required>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="address" [(ngModel)]="user.address" name="address"
+                 placeholder="Adres" required>
+        </div>
+        <div class="mb-3">
+          <input type="tel" class="form-control" id="phoneNumber" [(ngModel)]="user.phoneNumber" name="phoneNumber"
+                 placeholder="Telefoonnummer" required>
+        </div>
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-primary">Registreer</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,8 @@
-import {Component} from '@angular/core';
-import {Product} from "../models/product.model";
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+
+class NgbModal {
+}
 
 @Component({
   selector: 'app-home',
@@ -7,5 +10,9 @@ import {Product} from "../models/product.model";
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  constructor() {
+  }
+
+
 
 }

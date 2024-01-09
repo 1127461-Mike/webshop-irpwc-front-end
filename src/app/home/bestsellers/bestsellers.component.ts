@@ -10,12 +10,12 @@ import {ProductService} from "../../Services/product.service";
 })
 export class BestsellersComponent implements OnInit{
   products: Product[] = [
-    new Product('uuid-1', 'Zwart power oogpotlood', '...', 'assets/img/200w.gif', 15.00, 'Noelle'),
-    new Product('uuid-1', 'Zwart power oogpotlood', '...', 'assets/img/200w.gif', 15.00, 'Noelle'),
-    new Product('uuid-1', 'Zwart power oogpotlood', '...', 'assets/img/200w.gif', 15.00, 'Noelle'),
-    new Product('uuid-1', 'Zwart power oogpotlood', '...', 'assets/img/200w.gif', 15.00, 'Noelle'),
-    new Product('uuid-1', 'Zwart power oogpotlood', '...', 'assets/img/200w.gif', 15.00, 'Noelle'),
-    new Product('uuid-1', 'Zwart power oogpotlood', '...', 'assets/img/200w.gif', 15.00, 'Noelle'),
+    new Product('uuid-1', 'laptop', '...', 'assets/img/200w.gif', 15.00, 'Noelle'),
+    new Product('uuid-1', 'laptop', '...', 'assets/img/200w.gif', 15.00, 'Noelle'),
+    new Product('uuid-1', 'laptop', '...', 'assets/img/200w.gif', 15.00, 'Noelle'),
+    new Product('uuid-1', 'laptop', '...', 'assets/img/200w.gif', 15.00, 'Noelle'),
+    new Product('uuid-1', 'laptop', '...', 'assets/img/200w.gif', 15.00, 'Noelle'),
+    new Product('uuid-1', 'laptop', '...', 'assets/img/200w.gif', 15.00, 'Noelle'),
   ];
   // products: Product[] = [];
   private baseUrl = 'http://localhost:8080';
