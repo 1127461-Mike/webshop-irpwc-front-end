@@ -1,0 +1,29 @@
+<app-navigation></app-navigation>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <img [src]="product?.imagePath" class="img-fluid" [alt]="product?.name">
+    </div>
+    <div class="col-md-6 product-details">
+      <h2>{{ product?.name }}</h2>
+      <p class="product-code">
+      </p>
+      <p class="price">{{ product?.price | currency:'EUR' }}</p>
+
+      <div class="quantity-selector">
+        <label for="quantity">Aantal</label>
+        <input  style="margin-left: 10px;" type="number" id="quantity" name="quantity" min="1" value="1">
+      </div>
+
+      <button class="btn btn-dark">In winkelwagen</button>
+      <button class="btn btn-outline-dark">Nu kopen</button>
+
+      <div class="product-description">
+        <h3>PRODUCTINFORMATIE</h3>
+        <p>{{ product?.description }}</p>
+      </div>
+
+
+    </div>
+  </div>
+</div>

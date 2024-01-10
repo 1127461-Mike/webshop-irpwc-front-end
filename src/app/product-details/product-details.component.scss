@@ -1,0 +1,54 @@
+.container {
+  padding-top: 2rem;
+
+  .row {
+    align-items: center;
+
+    .col-md-6 {
+    }
+
+    // Image styling
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+    }
+
+    .product-details {
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        margin-bottom: 0.25rem;
+      }
+
+      .price,
+      .product-code {
+        font-weight: bold;
+      }
+
+      .quantity-selector {
+        margin: 1rem 0;
+      }
+      .btn {
+        width: 100%;
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+      }
+
+      .product-description {
+        margin-top: 1rem;
+
+        h3 {
+          font-size: 1.5rem;
+        }
+      }
+
+      .accordion {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
