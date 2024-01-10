@@ -1,0 +1,32 @@
+
+<app-navigation></app-navigation>
+
+<div class="container checkout">
+  <h2>Your Order</h2>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div *ngFor="let item of cartItems" class="checkout-item">
+
+        <div class="row">
+          <div class="col-md-4">
+            <img [src]="item.product.imagePath" alt="{{ item.product.name }}" class="img-fluid">
+          </div>
+          <div class="col-md-8">
+            <h3>{{ item.product.name }}</h3>
+            <p>Quantity: {{ item.quantity }}</p>
+            <p>Price: {{ item.product.price | currency:'EUR' }}</p>
+            <p>Subtotal: {{ (item.product.price * item.quantity) | currency:'EUR' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="checkout-total">
+        <h3>Total: {{ total | currency:'EUR' }}</h3>
+        <button class="btn btn-primary btn-lg">Order Now</button>
+      </div>
+    </div>
+  </div>
+</div>
