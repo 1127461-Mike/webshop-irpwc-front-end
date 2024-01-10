@@ -1,0 +1,18 @@
+<app-navigation></app-navigation>
+
+
+<div *ngIf="orders.length > 0; else noOrdersTemplate" class="order-list">
+    <div *ngFor="let order of orders" class="order-item" (click)="viewOrderDetails(order.id)">
+        <div class="order-header">
+            <h3>Order #{{ order.id }}</h3>
+            <span class="order-date">{{ order.datePurchased | date:'mediumDate' }}</span>
+        </div>
+        <div class="order-body">
+            <p>Total Price: <strong>{{ order.totalPrice | currency: 'EUR' }}</strong></p>
+        </div>
+    </div>
+</div>
+
+<ng-template #noOrdersTemplate>
+    <p class="no-orders">No orders found.</p>
+</ng-template>

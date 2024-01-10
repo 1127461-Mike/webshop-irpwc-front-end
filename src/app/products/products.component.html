@@ -4,7 +4,7 @@
   <div class="row">
 
     <div class="col-md-3">
-      <h4>Filteren op</h4>
+      <h4>Filteren on brand</h4>
       <div *ngFor="let brand of brands">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" [id]="brand" [value]="brand"
@@ -19,12 +19,12 @@
       <div class="row">
         <div class="col-12">
           <div class="d-flex justify-content-between align-items-center">
-            <h2>Alle producten</h2>
+            <h2>All Products</h2>
             <div>
-              <label for="sortOptions" class="form-label">Indelen op</label>
+              <label for="sortOptions" class="form-label">Sort on</label>
               <select id="sortOptions" class="form-select" (change)="sortProducts($event)">
-                <option value="priceAsc">Prijs: Laag naar Hoog</option>
-                <option value="priceDesc">Prijs: Hoog naar Laag</option>
+                <option value="priceAsc">Price: lowest to highest</option>
+                <option value="priceDesc">Price: highest to lowest</option>
               </select>
             </div>
           </div>

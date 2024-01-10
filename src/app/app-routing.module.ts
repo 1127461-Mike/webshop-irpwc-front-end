@@ -6,6 +6,8 @@ import {LoginComponent} from "./login/login.component";
 import {RegistrationComponent} from "./registration/registration.component";
 import {ProductDetailsComponent} from "./product-details/product-details.component";
 import {CheckoutComponent} from "./checkout/checkout.component";
+import {UserOrdersComponent} from "./user-orders/user-orders.component";
+import {OrderDetailsComponent} from "./order-details/order-details.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,7 +15,9 @@ const routes: Routes = [
   { path: 'product/:id', component: ProductDetailsComponent },
   {path:'login', component:LoginComponent},
   {path: 'registrate', component: RegistrationComponent},
-  {path: 'checkout', component: CheckoutComponent}
+  {path: 'checkout', component: CheckoutComponent},
+  {path:'my-orders', component: UserOrdersComponent},
+  { path: 'my-orders/:id', component: OrderDetailsComponent }
 
 ];
 

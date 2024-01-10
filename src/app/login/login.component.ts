@@ -17,12 +17,24 @@ export class LoginComponent {
   }
 
 
+  // onLogin(): void {
+  //   this.authService.login(this.email, this.password)
+  //     .subscribe(
+  //       (response) => {
+  //         localStorage.setItem('token', response.jwt);
+  //         this.router.navigate(['/'], { queryParams: { loggedIn: 'true' } })
+  //       },
+  //       (error) => {
+  //         console.error('Login failed', error);
+  //       }
+  //     );
+  // }
   onLogin(): void {
     this.authService.login(this.email, this.password)
       .subscribe(
         (response) => {
           localStorage.setItem('token', response.jwt);
-          this.router.navigate(['/'], { queryParams: { loggedIn: 'true' } })
+          this.router.navigateByUrl(this.getRedirectUrl());
         },
         (error) => {
           console.error('Login failed', error);
@@ -30,5 +42,10 @@ export class LoginComponent {
       );
   }
 
+  getRedirectUrl(): string {
+    const redirectUrl = localStorage.getItem('redirectUrl') || '/';
+    localStorage.removeItem('redirectUrl');
+    return redirectUrl;
+  }
 
 }

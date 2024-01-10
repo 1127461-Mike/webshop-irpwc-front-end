@@ -16,6 +16,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { UserOrdersComponent } from './user-orders/user-orders.component';
+import { OrderDetailsComponent } from './order-details/order-details.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { CheckoutComponent } from './checkout/checkout.component';
     RegistrationComponent,
     ProductDetailsComponent,
     CartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    UserOrdersComponent,
+    OrderDetailsComponent
   ],
   imports: [
     BrowserModule,

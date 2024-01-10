@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {CartItem} from "../models/cart-item.model";
 import {CartService} from "../cart.service";
+import {OrderService} from "../order.service";
+import {Router} from "@angular/router";
+import {OrderItemDto} from "../models/order.model";
 
 @Component({
   selector: 'app-checkout',
@@ -11,7 +14,9 @@ export class CheckoutComponent implements OnInit {
   cartItems: CartItem[] = [];
   total: number = 0;
 
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService,
+              private orderService: OrderService,
+              private router: Router ) {
   }
 
   ngOnInit(): void {
@@ -22,13 +27,53 @@ export class CheckoutComponent implements OnInit {
   calculateTotal(): void {
     this.total = this.cartItems.reduce((acc, item) => acc + (item.quantity * item.product.price), 0);
   }
-  updateQuantity(item: CartItem, quantity: string): void {
-    const qty = parseInt(quantity);
+  updateQuantity(item: CartItem, quantity: number): void {
+    const qty = quantity;
     if (!isNaN(qty)) {
       this.cartService.updateQuantity(item.product.id, qty);
-      this.cartItems = this.cartService.getItems(); // Refresh the list
-      this.calculateTotal(); // Recalculate total
+      this.cartItems = this.cartService.getItems();
+      this.calculateTotal();
     }
+  }
+
+  // checkout.component.ts
+
+  removeItem(productId: string): void {
+    this.cartService.removeFromCart(productId);
+    this.cartItems = this.cartService.getItems();
+    this.calculateTotal();
+  }
+
+  // checkout.component.ts
+
+  placeOrder(): void {
+    if (!this.isLoggedIn()) {
+      localStorage.setItem('redirectUrl', this.router.url);
+      this.router.navigate(['/login']);
+      return;
+    }
+
+    const orderItems: OrderItemDto[] = this.cartItems.map(item => ({
+      productID: item.product.id,
+      quantity: item.quantity
+    }));
+
+    this.orderService.placeOrder(orderItems).subscribe({
+      next: (response) => {
+        this.cartService.clearCart();
+        this.router.navigate(['/']);
+      },
+      error: (error) => {
+        // Handle errors
+        console.error('Order placement failed', error);
+      }
+    });
+  }
+
+
+
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('token');
   }
 
 }
