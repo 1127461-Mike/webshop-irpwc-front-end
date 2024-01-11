@@ -20,4 +20,13 @@ export class UserService {
   };
     return this.http.get<User[]>(this.apiUrl, httpOptions);
   }
+
+  registerAdmin(adminData: any) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + localStorage.getItem('token')
+      })
+    };
+    return this.http.post('http://localhost:8080/api/v1/user/registrate/admin', adminData);
+  }
 }

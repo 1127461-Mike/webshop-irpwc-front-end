@@ -1,14 +1,24 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {RoleService} from "../Services/role.service";
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss'
 })
-export class NavigationComponent {
-
-  constructor(private router: Router) {
+export class NavigationComponent implements OnInit{
+  role: string = '';
+  constructor(private router: Router,
+              private roleService: RoleService) {
+  }
+  ngOnInit(): void {
+    this.roleService.getRole()?.subscribe((data: any) => {
+      this.role = data.role;
+      console.log(data)
+    });
+    console.log(this.role)
+    console.log(this.isAdmin())
   }
   toMyOrder(){
     if (!this.isLoggedIn()) {
@@ -27,4 +37,8 @@ export class NavigationComponent {
   isLoggedIn(): boolean {
     return !!localStorage.getItem('token');
   }
+  isAdmin(): boolean {
+    return this.isLoggedIn() && this.role === 'ADMIN';
+  }
+
 }

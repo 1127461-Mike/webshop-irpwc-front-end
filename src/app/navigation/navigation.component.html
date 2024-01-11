@@ -19,6 +19,8 @@
       </ul>
     </div>
 
+
+
     <form class="d-flex ms-auto">
       <button class="navbar-button"><a class="nav-link active navbar-item" aria-current="page" (click)="toMyOrder()">MyOrders</a></button>
       <button class="navbar-button" *ngIf="!isLoggedIn()" [routerLink]="['/login']">Login</button>
@@ -26,6 +28,11 @@
       <button class="navbar-button" [routerLink]="['/checkout']">Shopping cart</button>
 
     </form>
+    <div *ngIf="isAdmin()" class="navbar-nav">
+      <a class="nav-link" [routerLink]="['/admin-createproduct']">Create Product</a>
+      <a class="nav-link" [routerLink]="['/admin/user-orders']">Admin Users</a>
+      <a class="nav-link" [routerLink]="['/admin/create-admin']">Create Admin</a>
+    </div>
   </div>
 </nav>
 
