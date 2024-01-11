@@ -6,6 +6,7 @@
         <div><strong>Email:</strong> {{ user.email }}</div>
         <div><strong>Address:</strong> {{ user.address }}</div>
         <div><strong>Phone:</strong> {{ user.phoneNumber }}</div>
-        <button class="get-orders-btn">Get Orders</button>
+        <button class="get-orders-btn" (click)="viewUserOrders(user.email)">Get Orders</button>
+
     </div>
 </div>

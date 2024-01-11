@@ -20,6 +20,7 @@ import { UserOrdersComponent } from './user-orders/user-orders.component';
 import { OrderDetailsComponent } from './user-orders/order-details/order-details.component';
 import { AdminUsersComponent } from './admin/admin-users/admin-users.component';
 import { CreateproductComponent } from './admin/createproduct/createproduct.component';
+import { AdminUsersOrdersComponent } from './admin/admin-users/admin-users-orders/admin-users-orders.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { CreateproductComponent } from './admin/createproduct/createproduct.comp
     UserOrdersComponent,
     OrderDetailsComponent,
     AdminUsersComponent,
-    CreateproductComponent
+    CreateproductComponent,
+    AdminUsersOrdersComponent
   ],
   imports: [
     BrowserModule,

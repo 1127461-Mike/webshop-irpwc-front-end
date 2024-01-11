@@ -10,6 +10,8 @@ import {UserOrdersComponent} from "./user-orders/user-orders.component";
 import {OrderDetailsComponent} from "./user-orders/order-details/order-details.component";
 import {AdminUsersComponent} from "./admin/admin-users/admin-users.component";
 import {CreateproductComponent} from "./admin/createproduct/createproduct.component";
+import {AdminOrderServiceService} from "./Services/admin-order-service.service";
+import {AdminUsersOrdersComponent} from "./admin/admin-users/admin-users-orders/admin-users-orders.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,8 +22,9 @@ const routes: Routes = [
   {path: 'checkout', component: CheckoutComponent},
   {path:'my-orders', component: UserOrdersComponent},
   { path: 'my-orders/:id', component: OrderDetailsComponent },
-  {path:'admin' , component:AdminUsersComponent},
-  {path:'admin-createproduct', component: CreateproductComponent}
+  {path:'admin-createproduct', component: CreateproductComponent},
+  {path:'admin/user-orders' ,component: AdminUsersComponent},
+  {path:'admin/user-orders/:email' ,component: AdminUsersOrdersComponent},
 
 ];
 

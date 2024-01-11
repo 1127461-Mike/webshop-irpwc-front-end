@@ -1,0 +1,10 @@
+<app-navigation></app-navigation>
+<div class="container mt-4">
+    <h2>User Orders</h2>
+    <div *ngFor="let order of userOrders" class="order-card">
+        <p><strong>Order ID:</strong> {{ order.id }}</p>
+        <p><strong>Date Purchased:</strong> {{ order.datePurchased | date }}</p>
+        <p><strong>Total Price:</strong> {{ order.totalPrice | currency }}</p>
+        <button class="btn btn-primary" (click)="viewOrderDetails(order.id)">View Details</button>
+    </div>
+</div>
