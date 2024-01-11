@@ -27,6 +27,6 @@ export class UserService {
         'Authorization': 'Bearer ' + localStorage.getItem('token')
       })
     };
-    return this.http.post('http://localhost:8080/api/v1/user/registrate/admin', adminData);
+    return this.http.post('http://localhost:8080/api/v1/user/registrate/admin', adminData, httpOptions);
   }
 }

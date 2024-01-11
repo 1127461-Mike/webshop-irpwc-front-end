@@ -39,7 +39,7 @@ export class CreateproductComponent {
     }
 
     this.productService.createProduct(formData).subscribe({
-      next: (response) => console.log('Product created', response),
+      next: (response) => console.log(),
       error: (error) => console.error('Error creating product', error)
     });
   }

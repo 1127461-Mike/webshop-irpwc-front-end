@@ -28,7 +28,6 @@ export class RegistrationComponent {
     this.authService.register(this.user)
       .subscribe(
       response => {
-        console.log(response);
         this.somethingWentWrong = false;
         this.router.navigate(['/login'])
       },

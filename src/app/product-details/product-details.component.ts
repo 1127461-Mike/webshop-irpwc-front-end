@@ -30,11 +30,9 @@ export class ProductDetailsComponent implements OnInit{
             imagePath: this.getFullImagePath(productData.imagePath)
 
           };
-          console.log(this.getFullImagePath(productData.imagePath));
 
         },
         (error) => {
-          // Handle the error
         }
       );
     }

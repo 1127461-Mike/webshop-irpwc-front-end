@@ -14,6 +14,7 @@ import {AdminOrderServiceService} from "./Services/admin-order-service.service";
 import {AdminUsersOrdersComponent} from "./admin/admin-users/admin-users-orders/admin-users-orders.component";
 import {OrderDetailComponent} from "./admin/admin-users/order-detail/order-detail.component";
 import {CreateAdminComponent} from "./admin/create-admin/create-admin.component";
+import {AuthguardService} from "./authguard.service";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,11 +25,11 @@ const routes: Routes = [
   {path: 'checkout', component: CheckoutComponent},
   {path:'my-orders', component: UserOrdersComponent},
   { path: 'my-orders/:id', component: OrderDetailsComponent },
-  {path:'admin-createproduct', component: CreateproductComponent},
-  {path:'admin/user-orders' ,component: AdminUsersComponent},
-  {path:'admin/user-orders/:email' ,component: AdminUsersOrdersComponent},
-  { path: 'admin/order-details/:orderId', component: OrderDetailComponent },
-  { path: 'admin/create-admin', component: CreateAdminComponent }
+  { path: 'admin-createproduct', component: CreateproductComponent, canActivate: [AuthguardService] },
+  { path: 'admin/user-orders', component: AdminUsersComponent, canActivate: [AuthguardService] },
+  { path: 'admin/user-orders/:email', component: AdminUsersOrdersComponent, canActivate: [AuthguardService] },
+  { path: 'admin/order-details/:orderId', component: OrderDetailComponent, canActivate: [AuthguardService] },
+  { path: 'admin/create-admin', component: CreateAdminComponent, canActivate: [AuthguardService] },
 
 
 ];

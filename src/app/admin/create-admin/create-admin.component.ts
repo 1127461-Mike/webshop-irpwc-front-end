@@ -23,7 +23,6 @@ export class CreateAdminComponent {
   onSubmit() {
     this.userService.registerAdmin(this.newAdmin).subscribe({
       next: (response) => {
-        console.log('Admin created:', response);
       },
       error: (error) => {
         console.error('Error creating admin:', error);

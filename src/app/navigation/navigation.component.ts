@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {RoleService} from "../Services/role.service";
+import {of} from "rxjs";
 
 @Component({
   selector: 'app-navigation',
@@ -13,12 +14,17 @@ export class NavigationComponent implements OnInit{
               private roleService: RoleService) {
   }
   ngOnInit(): void {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      // this.router.navigate(['/login']);
+
+    }else {
+
     this.roleService.getRole()?.subscribe((data: any) => {
       this.role = data.role;
-      console.log(data)
     });
-    console.log(this.role)
-    console.log(this.isAdmin())
+    }
+
   }
   toMyOrder(){
     if (!this.isLoggedIn()) {

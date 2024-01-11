@@ -11,12 +11,12 @@ import {ProductService} from "../Services/product.service";
 })
 export class ProductsComponent implements OnInit {
   products: Product[] = [
-    new Product('uuid-1', 'laptop', '...', 'assets/img/maxbookair.jpg', 18.00, 'Switch'),
-    new Product('uuid-1', 'laptop', '...', 'assets/img/maxbookair.jpg', 15.00, 'Switch'),
-    new Product('uuid-1', 'laptop', '...', 'assets/img/maxbookair.jpg', 15.00, 'Switch'),
-    new Product('uuid-1', 'laptop', '...', 'assets/img/maxbookair.jpg', 15.00, 'Switch'),
-    new Product('uuid-1', 'laptop', '...', 'assets/img/maxbookair.jpg', 15.00, 'Switch'),
-    new Product('uuid-1', 'laptop', '...', 'assets/img/maxbookair.jpg', 15.00, 'Switch'),
+    new Product('uuid-1', 'laptop', '...', 'assets/img/200w.gif', 18.00, 'Switch'),
+    new Product('uuid-1', 'laptop', '...', 'assets/img/200w.gif', 18.00, 'Switch'),
+    new Product('uuid-1', 'laptop', '...', 'assets/img/200w.gif', 18.00, 'Switch'),
+    new Product('uuid-1', 'laptop', '...', 'assets/img/200w.gif', 18.00, 'Switch'),
+    new Product('uuid-1', 'laptop', '...', 'assets/img/200w.gif', 18.00, 'Switch'),
+    new Product('uuid-1', 'laptop', '...', 'assets/img/200w.gif', 18.00, 'Switch'),
   ];
   brands: string[]= [];
   selectedBrands: Set<string> = new Set();

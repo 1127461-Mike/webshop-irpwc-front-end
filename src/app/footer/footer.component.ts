@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
   subscribeUser(email: string): void {
-    console.log(email);
 
   }
 }
