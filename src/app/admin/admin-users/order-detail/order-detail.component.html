@@ -1,0 +1,14 @@
+<app-navigation></app-navigation>
+<div class="container mt-4" *ngIf="orderDetail">
+    <h2>Order Detail (ID: {{ orderDetail.orderId }})</h2>
+    <p>Date Purchased: {{ orderDetail.datePurchased | date }}</p>
+    <p>Total Price: {{ orderDetail.totalPrice | currency }}</p>
+    <div>
+        <h3>Items:</h3>
+        <ul>
+            <li *ngFor="let item of orderDetail.items">
+                {{ item.productName }} - {{ item.quantity }} x {{ item.productPrice | currency }}
+            </li>
+        </ul>
+    </div>
+</div>

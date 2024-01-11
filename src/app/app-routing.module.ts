@@ -12,6 +12,7 @@ import {AdminUsersComponent} from "./admin/admin-users/admin-users.component";
 import {CreateproductComponent} from "./admin/createproduct/createproduct.component";
 import {AdminOrderServiceService} from "./Services/admin-order-service.service";
 import {AdminUsersOrdersComponent} from "./admin/admin-users/admin-users-orders/admin-users-orders.component";
+import {OrderDetailComponent} from "./admin/admin-users/order-detail/order-detail.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -25,6 +26,8 @@ const routes: Routes = [
   {path:'admin-createproduct', component: CreateproductComponent},
   {path:'admin/user-orders' ,component: AdminUsersComponent},
   {path:'admin/user-orders/:email' ,component: AdminUsersOrdersComponent},
+  { path: 'admin/order-details/:orderId', component: OrderDetailComponent }
+
 
 ];
 

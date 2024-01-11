@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 import {AdminOrderServiceService} from "../../../Services/admin-order-service.service";
 import {Order} from "../../../models/order.model";
 
@@ -9,12 +9,13 @@ import {Order} from "../../../models/order.model";
   templateUrl: './admin-users-orders.component.html',
   styleUrl: './admin-users-orders.component.scss'
 })
-export class AdminUsersOrdersComponent {
+export class AdminUsersOrdersComponent implements OnInit{
   userOrders: Order[] = [];
 
   constructor(
       private adminOrderService: AdminOrderServiceService,
-      private route: ActivatedRoute
+      private route: ActivatedRoute,
+      private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -27,5 +28,7 @@ export class AdminUsersOrdersComponent {
   }
 
   viewOrderDetails(orderId: string): void {
+    this.router.navigate(['/admin/order-details', orderId]);
   }
+
 }
