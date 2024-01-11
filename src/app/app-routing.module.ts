@@ -8,6 +8,8 @@ import {ProductDetailsComponent} from "./product-details/product-details.compone
 import {CheckoutComponent} from "./checkout/checkout.component";
 import {UserOrdersComponent} from "./user-orders/user-orders.component";
 import {OrderDetailsComponent} from "./user-orders/order-details/order-details.component";
+import {AdminUsersComponent} from "./admin/admin-users/admin-users.component";
+import {CreateproductComponent} from "./admin/createproduct/createproduct.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,7 +19,9 @@ const routes: Routes = [
   {path: 'registrate', component: RegistrationComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path:'my-orders', component: UserOrdersComponent},
-  { path: 'my-orders/:id', component: OrderDetailsComponent }
+  { path: 'my-orders/:id', component: OrderDetailsComponent },
+  {path:'admin' , component:AdminUsersComponent},
+  {path:'admin-createproduct', component: CreateproductComponent}
 
 ];
 

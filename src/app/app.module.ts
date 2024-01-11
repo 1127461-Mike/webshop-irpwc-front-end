@@ -18,6 +18,8 @@ import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { UserOrdersComponent } from './user-orders/user-orders.component';
 import { OrderDetailsComponent } from './user-orders/order-details/order-details.component';
+import { AdminUsersComponent } from './admin/admin-users/admin-users.component';
+import { CreateproductComponent } from './admin/createproduct/createproduct.component';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { OrderDetailsComponent } from './user-orders/order-details/order-details
     CartComponent,
     CheckoutComponent,
     UserOrdersComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    AdminUsersComponent,
+    CreateproductComponent
   ],
   imports: [
     BrowserModule,

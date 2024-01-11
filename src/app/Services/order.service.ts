@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Order, OrderDto, OrderItemDto} from "./models/order.model";
+import {Order, OrderDto, OrderItemDto} from "../models/order.model";
 import {Observable} from "rxjs";
-import {OrderDetailDto} from "./models/order-details.model";
+import {OrderDetailDto} from "../models/order-details.model";
 
 
 

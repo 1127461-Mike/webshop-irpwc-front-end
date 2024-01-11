@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {OrderDetailDto} from "../../models/order-details.model";
 import {ActivatedRoute} from "@angular/router";
-import {OrderService} from "../../order.service";
+import {OrderService} from "../../Services/order.service";
 
 @Component({
   selector: 'app-order-details',
