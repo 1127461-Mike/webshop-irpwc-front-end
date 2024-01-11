@@ -1,0 +1,19 @@
+<app-navigation></app-navigation>
+<div *ngIf="orderDetails" class="order-details">
+    <h2>Order Details (ID: {{ orderDetails.orderId }})</h2>
+    <p>Date Purchased: {{ orderDetails.datePurchased | date:'medium' }}</p>
+    <p>Total Price: {{ orderDetails.totalPrice | currency }}</p>
+
+    <div class="items">
+        <h3>Items:</h3>
+        <ul>
+            <li *ngFor="let item of orderDetails.items">
+                {{ item.productName }} - {{ item.quantity }} x {{ item.productPrice | currency }}
+            </li>
+        </ul>
+    </div>
+</div>
+
+<ng-template #noOrderDetails>
+    <p>Order details not found.</p>
+</ng-template>

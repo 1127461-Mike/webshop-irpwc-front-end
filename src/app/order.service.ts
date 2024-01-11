@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Order, OrderDto, OrderItemDto} from "./models/order.model";
 import {Observable} from "rxjs";
+import {OrderDetailDto} from "./models/order-details.model";
 
 
 
@@ -33,4 +34,12 @@ export class OrderService {
     return this.http.get<Order[]>(`${this.orderUrl}/my`,httpOptions);
   }
 
+  getOrderDetails(orderId: string) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + localStorage.getItem('token')
+      })
+    };
+    return this.http.get<OrderDetailDto>(`${this.orderUrl}/${orderId}`, httpOptions)
+  }
 }
