@@ -5,7 +5,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
   providedIn: 'root'
 })
 export class RoleService {
-  private apiUrl = 'http://localhost:8080/api/v1/user';
+  private apiUrl = 'https://mikeasante.live/api/v1/user';
 
   constructor(private http: HttpClient) {
   }

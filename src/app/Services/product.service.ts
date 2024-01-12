@@ -8,7 +8,7 @@ import {Product} from "../models/product.model";
   providedIn: 'root'
 })
 export class ProductService {
-  private apiUrl = 'http://localhost:8080/api/v1/product';
+  private apiUrl = 'https://mikeasante.live/api/v1/product';
 
   constructor(private http: HttpClient) { }
 
@@ -21,12 +21,14 @@ export class ProductService {
     return this.http.get<Product>(url);
   }
 
-  createProduct(formData: FormData) {
+  createProduct(productData: any) {
     const httpOptions = {
       headers: new HttpHeaders({
+        'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + localStorage.getItem('token')
       })
     };
-    return this.http.post(`${this.apiUrl}/create`, formData , httpOptions);
+    return this.http.post<Product>(`${this.apiUrl}/create`, JSON.stringify(productData), httpOptions);
   }
+
 }

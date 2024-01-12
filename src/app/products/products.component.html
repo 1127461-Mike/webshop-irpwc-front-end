@@ -3,16 +3,30 @@
 <div class="container mt-4">
   <div class="row">
 
+<!--    <div class="col-md-3">-->
+<!--      <h4>Filteren on brand</h4>-->
+<!--      <div *ngFor="let brand of brands">-->
+<!--        <div class="form-check">-->
+<!--          <input class="form-check-input" type="checkbox" [id]="brand" [value]="brand"-->
+<!--                 (change)="onBrandChange(brand, $event)">-->
+<!--          <label class="form-check-label" [for]="brand">{{ brand }}</label>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
     <div class="col-md-3">
-      <h4>Filteren on brand</h4>
+      <h4>Filter by Brand</h4>
       <div *ngFor="let brand of brands">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" [id]="brand" [value]="brand"
                  (change)="onBrandChange(brand, $event)">
-          <label class="form-check-label" [for]="brand">{{ brand }}</label>
+          <label class="form-check-label" [for]="brand">
+            {{ brand }} ({{ brandCounts.get(brand) }})
+          </label>
         </div>
       </div>
     </div>
+
 
     <!--    tot hier -->
     <div class="col-md-9">

@@ -12,7 +12,7 @@ import {CartService} from "../Services/cart.service";
 export class ProductDetailsComponent implements OnInit{
   product: Product | undefined;
   quantity: number = 1;
-  private baseUrl = 'http://localhost:8080';
+  private baseUrl = 'https://mikeasante.live';
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
@@ -25,11 +25,7 @@ export class ProductDetailsComponent implements OnInit{
     if (productId) {
       this.productService.getProductById(productId).subscribe(
         (productData) => {
-          this.product = {
-            ...productData,
-            imagePath: this.getFullImagePath(productData.imagePath)
-
-          };
+          this.product = productData;
 
         },
         (error) => {
@@ -40,9 +36,9 @@ export class ProductDetailsComponent implements OnInit{
 
   }
 
-  getFullImagePath(relativePath: string): string {
-    return `${this.baseUrl}${relativePath}`;
-  }
+  // getFullImagePath(relativePath: string): string {
+  //   return `${this.baseUrl}${relativePath}`;
+  // }
 
 
   addToCart(): void {

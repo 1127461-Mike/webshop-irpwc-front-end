@@ -7,7 +7,7 @@ import {OrderDetailDto} from "../models/order-details.model";
 })
 export class AdminOrderServiceService {
 
-  private apiUrl = 'http://localhost:8080/api/admin/orders';
+  private apiUrl = 'https://mikeasante.live/api/admin/orders';
 
   constructor(private http: HttpClient) {}
 

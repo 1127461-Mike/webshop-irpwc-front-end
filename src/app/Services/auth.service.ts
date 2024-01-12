@@ -10,11 +10,11 @@ export class AuthService{
   constructor(private http: HttpClient) {}
 
   login(email: string, password: string) {
-    return this.http.post<any>('http://localhost:8080/authenticate', { email, password });
+    return this.http.post<any>('https://mikeasante.live/authenticate', { email, password });
   }
 
   register(user: any) {
-    return this.http.post<any>('http://localhost:8080/api/v1/user/registrate', user);
+    return this.http.post<any>('https://mikeasante.live/api/v1/user/registrate', user);
   }
 
   loggedin(LoggedIn: boolean){

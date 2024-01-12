@@ -20,8 +20,9 @@ export class ProductsComponent implements OnInit {
   ];
   brands: string[]= [];
   selectedBrands: Set<string> = new Set();
-  baseUrl: string = 'http://localhost:8080';
+  baseUrl: string = 'https://mikeasante.live';
   allProducts: Product[] = [];
+  brandCounts: Map<string, number> = new Map<string, number>();
 
   constructor(private productService: ProductService) {
   }
@@ -30,16 +31,24 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     this.productService.getProducts().subscribe(
       (data: Product[]) => {
-        const productsWithImages = data.map(product => ({
-          ...product,
-          imagePath: this.getFullImagePath(product.imagePath)
-        }));
+        const productsWithImages = data;
         this.allProducts = productsWithImages;
         this.products = productsWithImages;
 
         this.brands = data
           .map(product => product.brandName)
           .filter((brand): brand is string => !!brand);
+
+        data.forEach(product => {
+          if (product.brandName) {
+            if (this.brandCounts.has(product.brandName)) {
+              this.brandCounts.set(product.brandName, this.brandCounts.get(product.brandName)! + 1);
+            } else {
+              this.brandCounts.set(product.brandName, 1);
+            }
+          }
+        });
+        this.brands = Array.from(this.brandCounts.keys());
       },
       error => {
         console.error('There was an error!', error);
@@ -47,9 +56,9 @@ export class ProductsComponent implements OnInit {
     );
   }
 
-  getFullImagePath(relativePath: string): string {
-    return `${this.baseUrl}${relativePath}`;
-  }
+  // getFullImagePath(relativePath: string): string {
+  //   return `${this.baseUrl}${relativePath}`;
+  // }
   sortProducts(event: Event): void {
     const value = (event.target as HTMLSelectElement).value;
     if (value === 'priceAsc') {

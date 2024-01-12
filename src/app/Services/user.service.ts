@@ -8,7 +8,7 @@ import {User} from "../models/user.model";
 })
 export class UserService {
 
-  private apiUrl = 'http://localhost:8080/api/v1/user';
+  private apiUrl = 'https://mikeasante.live/api/v1/user';
 
   constructor(private http: HttpClient) {}
 
@@ -27,6 +27,6 @@ export class UserService {
         'Authorization': 'Bearer ' + localStorage.getItem('token')
       })
     };
-    return this.http.post('http://localhost:8080/api/v1/user/registrate/admin', adminData, httpOptions);
+    return this.http.post('https://mikeasante.live/api/v1/user/registrate/admin', adminData, httpOptions);
   }
 }

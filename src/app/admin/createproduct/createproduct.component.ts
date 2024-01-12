@@ -12,34 +12,36 @@ export class CreateproductComponent {
     name: new FormControl(''),
     description: new FormControl(''),
     price: new FormControl(''),
-    brandName: new FormControl('')
+    brandName: new FormControl(''),
+    imagePath: new FormControl('')
   });
-  selectedFile: File | null = null;
+  // selectedFile: File | null = null;
 
   constructor(private productService: ProductService) {}
 
-  onFileSelected(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    if (input.files && input.files.length) {
-      const file = input.files[0];
-      this.selectedFile = file;
-    }
-  }
+  // onFileSelected(event: Event): void {
+  //   const input = event.target as HTMLInputElement;
+  //   if (input.files && input.files.length) {
+  //     const file = input.files[0];
+  //     this.selectedFile = file;
+  //   }
+  // }
 
 
   onSubmit(): void {
-    const formData = new FormData();
-    formData.append('name', this.createProductForm.value.name || '');
-    formData.append('description', this.createProductForm.value.description || '');
-    formData.append('price', this.createProductForm.value.price || '');
-    formData.append('brandName', this.createProductForm.value.brandName || '');
+    const productData = {
+      name: this.createProductForm.value.name,
+      description: this.createProductForm.value.description,
+      price: this.createProductForm.value.price,
+      brandName: this.createProductForm.value.brandName,
+      imagePath: this.createProductForm.value.imagePath
+    };
+    // if (this.selectedFile) {
+    //   formData.append('image', this.selectedFile, this.selectedFile.name);
+    // }
 
-    if (this.selectedFile) {
-      formData.append('image', this.selectedFile, this.selectedFile.name);
-    }
-
-    this.productService.createProduct(formData).subscribe({
-      next: (response) => console.log(),
+    this.productService.createProduct(productData).subscribe({
+      next: (response) => console.log('Product created', response),
       error: (error) => console.error('Error creating product', error)
     });
   }

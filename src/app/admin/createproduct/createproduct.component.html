@@ -19,7 +19,7 @@
     </div>
     <div class="mb-3">
         <label for="image" class="form-label">Product Image:</label>
-        <input type="file" id="image" (change)="onFileSelected($event)" class="form-control">
+        <input type="text" id="image" formControlName="imagePath" class="form-control">
     </div>
     <button type="submit" class="btn btn-primary">Create Product</button>
 </form>

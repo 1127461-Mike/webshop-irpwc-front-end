@@ -18,7 +18,7 @@ export class BestsellersComponent implements OnInit{
     new Product('uuid-1', 'laptop', '...', 'assets/img/200w.gif', 15.00, 'Noelle'),
   ];
   // products: Product[] = [];
-  private baseUrl = 'http://localhost:8080';
+  private baseUrl = 'https://mikeasante.live';
 
   constructor(private productService: ProductService) {
   }
@@ -26,10 +26,7 @@ export class BestsellersComponent implements OnInit{
   ngOnInit(): void {
     this.productService.getProducts().subscribe(
       (data: Product[]) => {
-        this.products = data.map(product => ({
-          ...product,
-          imagePath: this.getFullImagePath(product.imagePath)
-        }));
+        this.products = data;
       },
       error => {
         console.error('There was an error!', error);
@@ -37,7 +34,7 @@ export class BestsellersComponent implements OnInit{
     );
   }
 
-  getFullImagePath(relativePath: string): string {
-    return `${this.baseUrl}${relativePath}`;
-  }
+  // getFullImagePath(relativePath: string): string {
+  //   return `${this.baseUrl}${relativePath}`;
+  // }
 }

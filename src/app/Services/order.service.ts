@@ -11,7 +11,7 @@ import {OrderDetailDto} from "../models/order-details.model";
 })
 export class OrderService {
 
-  private orderUrl = 'http://localhost:8080/api/v1/order';
+  private orderUrl = 'https://mikeasante.live/api/v1/order';
 
   constructor(private http: HttpClient) {}
 
